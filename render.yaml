@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: finance-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: JWT_SECRET_KEY
+        value: q0PkSEj8QA0z_jlh3LsqXcMHWtF2963Gc9px1ncZrUM
+      - key: DEFAULT_ADMIN_EMAIL
+        scope: run
+        value: admin@financeapp.com
+      - key: DEFAULT_ADMIN_PASSWORD
+        scope: run
+        value: Admin@123
