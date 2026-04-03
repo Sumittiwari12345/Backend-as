@@ -252,6 +252,11 @@ bash
 set DEFAULT_ADMIN_EMAIL=your-email@company.com
 set DEFAULT_ADMIN_PASSWORD=YourSecurePassword123
 
+##  Environment Notes
+
+- `ENVIRONMENT=development` by default.
+- Set `ENVIRONMENT=production` and provide a real `JWT_SECRET_KEY` for deployments.
+
 
 
 
