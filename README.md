@@ -141,17 +141,17 @@ You'll see `(.venv)` in your terminal when active.
 
 ### Step 2️ Install Dependencies
 
-```bash
+bash
 pip install -r requirements.txt
-```
+
 
 This installs FastAPI, SQLAlchemy, JWT, and other packages.
 
 ### Step 3️ Start the Server
 
-```bash
+bash
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
+
 
 You should see:
 
@@ -170,22 +170,22 @@ pytest tests/ -v
 
 
 You'll see all tests pass :
-```
+
  test_role_based_permissions PASSED
  test_summary_calculation_and_filters PASSED
  test_prevent_disabling_last_admin PASSED
 
 
----
+
 
 ##  Using the API
 
 ### Option 1: Interactive Swagger UI (Easiest!)
 
 Open your browser and go to:
-```
+
 http://localhost:8000/docs
-```
+
 
 You can:
 -  See all endpoints with descriptions
@@ -229,14 +229,13 @@ json
 
 Copy that `access_token` value and include it in the header:
 
-```bash
+bash
 curl -X GET "http://localhost:8000/auth/me" \
   -H "Authorization: Bearer YOUR_TOKEN_HERE"
-```
+
 
 That's it! 
 
----
 
 ##  Default Admin Account
 
@@ -301,7 +300,7 @@ set DEFAULT_ADMIN_PASSWORD=YourSecurePassword123
 &points=6               (how many periods to return)
 &start_date=2026-01-01
 &end_date=2026-12-31
-```
+
 
 ---
 
@@ -360,14 +359,14 @@ The API is smart about errors and tells you what went wrong:
 {
   "detail": "Role 'viewer' is not allowed for this action."
 }
-```
+
 
 ---
 
 ##  API Response Format
 
 ### Success Response
-```json
+json
 {
   "id": 1,
   "email": "user@example.com",
@@ -377,14 +376,14 @@ The API is smart about errors and tells you what went wrong:
   "created_at": "2026-01-15T10:30:00+00:00",
   "updated_at": "2026-01-15T10:30:00+00:00"
 }
-```
+
 
 ### Error Response
-```json
+json
 {
   "detail": "A user with this email already exists."
 }
-```
+
 
 ---
 
@@ -405,29 +404,29 @@ Things you could add later:
 ##  Troubleshooting
 
 ### "Module not found" error
-```bash
+bash
 # Make sure virtual environment is activated:
 .venv\Scripts\Activate.ps1  # Windows
 source .venv/bin/activate  # Linux/Mac
 
 # Then reinstall dependencies:
 pip install -r requirements.txt
-```
+
 
 ### "Address already in use" error
-```bash
+bash
 # Port 8000 is taken. Use a different port:
 uvicorn app.main:app --reload --port 8001
-```
+
 
 ### Tests failing
-```bash
+bash
 # Make sure you're in the right directory:
 cd "c:\Users\DELL\Downloads\Backend Assignment"
 
 # Run tests:
 pytest tests/ -v
-```
+
 
 ### Can't login
 - Check email is lowercase: `admin@financeapp.com`
