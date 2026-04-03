@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+finance_dashboard.db
+test_finance_dashboard.db
+
